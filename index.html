@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI FoodFind - Quick App Tour</title>
+    <title>Let's Go Out! - Quick App Tour</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #10B981;
-            --primary-dark: #059669;
-            --accent: #F59E0B;
-            --bg-dark: #090D16;
+            --primary: #8B5CF6;
+            --primary-hover: #7C3AED;
+            --accent: #EC4899;
+            --highlight: #F59E0B;
+            --bg-dark: #0B0F19;
             --bg-card: #111827;
-            --bg-card-hover: #1F2937;
             --border: #1F2937;
             --text-main: #F9FAFB;
             --text-sub: #9CA3AF;
@@ -33,13 +33,13 @@
             overflow-x: hidden;
         }
 
-        /* Top Navbar */
+        /* Navbar */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 18px 8%;
-            background: rgba(9, 13, 22, 0.85);
+            background: rgba(11, 15, 25, 0.85);
             backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
@@ -58,8 +58,8 @@
         }
 
         .logo-icon {
-            background: var(--primary);
-            color: #000;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #ffffff;
             padding: 6px 10px;
             border-radius: 8px;
             font-size: 1rem;
@@ -80,7 +80,7 @@
             transition: 0.2s;
         }
 
-        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover { color: var(--accent); }
 
         /* Hero Section */
         header {
@@ -91,19 +91,19 @@
         }
 
         .badge {
-            background: rgba(16, 185, 129, 0.12);
-            color: var(--primary);
+            background: rgba(236, 72, 153, 0.12);
+            color: var(--accent);
             padding: 6px 18px;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 700;
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            border: 1px solid rgba(236, 72, 153, 0.3);
             display: inline-block;
             margin-bottom: 20px;
         }
 
         h1 {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-size: clamp(2.3rem, 5vw, 3.6rem);
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 20px;
@@ -111,7 +111,7 @@
         }
 
         h1 span {
-            background: linear-gradient(135deg, #10B981, #34D399);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -126,24 +126,23 @@
         }
 
         .cta-btn {
-            background: var(--primary);
-            color: #052E16;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #ffffff;
             padding: 14px 32px;
             border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
             display: inline-block;
             transition: 0.3s;
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
         }
 
         .cta-btn:hover {
-            background: var(--primary-dark);
             transform: translateY(-2px);
-            color: #ffffff;
+            opacity: 0.95;
         }
 
-        /* CSS Phone Mockup */
+        /* Phone Mockup */
         .phone-mockup {
             max-width: 360px;
             margin: 50px auto 0;
@@ -151,7 +150,7 @@
             border: 4px solid #1F2937;
             border-radius: 40px;
             padding: 16px;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7), 0 0 30px rgba(16, 185, 129, 0.15);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7), 0 0 30px rgba(139, 92, 246, 0.2);
             text-align: left;
         }
 
@@ -171,9 +170,9 @@
             margin-bottom: 12px;
         }
 
-        .ingredient-tag {
+        .badge-tag {
             display: inline-block;
-            background: rgba(16, 185, 129, 0.15);
+            background: rgba(139, 92, 246, 0.15);
             color: var(--primary);
             padding: 4px 10px;
             border-radius: 6px;
@@ -212,7 +211,7 @@
         .step-visual { flex: 1; min-width: 300px; }
 
         .step-num {
-            color: var(--primary);
+            color: var(--accent);
             font-weight: 800;
             font-size: 0.85rem;
             letter-spacing: 1.5px;
@@ -259,7 +258,7 @@
         }
 
         .feature-card:hover {
-            border-color: var(--primary);
+            border-color: var(--accent);
             transform: translateY(-4px);
         }
 
@@ -315,7 +314,7 @@
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <span class="logo-icon">AI</span> AI FoodFind
+            <span class="logo-icon">🎉</span> Let's Go Out!
         </div>
         <ul class="nav-links">
             <li><a href="#overview">Overview</a></li>
@@ -327,52 +326,51 @@
 
     <!-- Hero Section -->
     <header id="overview">
-        <span class="badge">✨ Official App Tour Showcase</span>
-        <h1>Never Waste Food Again with <span>AI FoodFind</span></h1>
-        <p class="hero-desc">An intelligent culinary assistant that scans your fridge, analyzes available ingredients, and generates personalized recipes in seconds.</p>
-        <a href="#tour" class="cta-btn">Take the Guided Tour 👇</a>
+        <span class="badge">🚀 Official Interactive App Tour</span>
+        <h1>Plan Perfect Outings with <span>Let's Go Out!</span></h1>
+        <p class="hero-desc">The ultimate hangout planner that helps you and your friends discover top local spots, vote on places to go, and coordinate seamless outings without the group chat chaos.</p>
+        <a href="#tour" class="cta-btn">Start Guided Tour 👇</a>
 
         <!-- Interactive Phone Mockup Preview -->
         <div class="phone-mockup">
             <div class="phone-notch"></div>
             <div style="text-align: center; font-weight:700; font-size:0.9rem; margin-bottom:12px; color:var(--text-sub);">
-                📱 AI FoodFind Dashboard
+                📱 Weekend Plan #04
             </div>
 
             <div class="app-screen-card">
-                <div style="font-size:0.8rem; color:var(--text-sub);">Detected Pantry Items:</div>
+                <div style="font-size:0.8rem; color:var(--text-sub);">Group Poll Active:</div>
                 <div style="margin-top:6px;">
-                    <span class="ingredient-tag">🥚 Eggs (3)</span>
-                    <span class="ingredient-tag">🍅 Tomatoes</span>
-                    <span class="ingredient-tag">🧀 Cheese</span>
-                    <span class="ingredient-tag">🧄 Garlic</span>
+                    <span class="badge-tag">🍕 Rooftop Pizza (3 votes)</span>
+                    <span class="badge-tag">🎳 Bowling Alley (4 votes)</span>
+                    <span class="badge-tag">☕ Sunset Cafe (1 vote)</span>
                 </div>
             </div>
 
-            <div class="app-screen-card" style="border-left: 3px solid var(--primary);">
-                <div style="font-size:0.75rem; color:var(--primary); font-weight:700;">98% MATCH SUGGESTION</div>
-                <div style="font-weight:700; font-size:1rem; margin:2px 0;">Fresh Tomato Omelette</div>
-                <div style="font-size:0.8rem; color:var(--text-sub);">⏱️ 10 mins • 🍳 Easy • 320 kcal</div>
+            <div class="app-screen-card" style="border-left: 3px solid var(--accent);">
+                <div style="font-size:0.75rem; color:var(--accent); font-weight:700;">WINNING DESTINATION 🎉</div>
+                <div style="font-weight:700; font-size:1rem; margin:2px 0;">Metro Strike & Bowling</div>
+                <div style="font-size:0.8rem; color:var(--text-sub);">📍 Downtown • ⏰ Saturday 7:00 PM • 👥 6 Attending</div>
             </div>
         </div>
     </header>
 
     <!-- Guided Tour Steps Section -->
     <section class="tour-section" id="tour">
-        <h2 class="section-title">📱 Interactive App Walkthrough</h2>
+        <h2 class="section-title">📱 Guided App Walkthrough</h2>
 
         <!-- Step 1 -->
         <div class="step-row">
             <div class="step-info">
                 <span class="step-num">STEP 01</span>
-                <h3>Instant Pantry Scanning</h3>
-                <p>Simply take a picture of your open fridge or pantry, or quickly type in what you have on hand. The AI automatically identifies all raw ingredients and adds them to your virtual kitchen inventory.</p>
+                <h3>Discover Top Spots Nearby</h3>
+                <p>Browse curated lists of restaurants, outdoor activities, cafes, nightlife, and hidden gems based on your live location, budget, and group vibe.</p>
             </div>
             <div class="step-visual">
                 <div class="visual-box">
-                    <div style="font-size: 2.5rem; margin-bottom: 10px;">📸</div>
-                    <h4 style="margin-bottom:8px;">Smart Image Recognition</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-sub);">Analyzes food items using computer vision to eliminate manual typing.</p>
+                    <div style="font-size: 2.5rem; margin-bottom: 10px;">🔍</div>
+                    <h4 style="margin-bottom:8px;">Smart Spot Discovery</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-sub);">Filter spots by atmosphere, distance, price range, and group size availability.</p>
                 </div>
             </div>
         </div>
@@ -381,14 +379,14 @@
         <div class="step-row">
             <div class="step-info">
                 <span class="step-num">STEP 02</span>
-                <h3>AI Recipe Generation</h3>
-                <p>Select your dietary preferences (Keto, Vegan, High-Protein, Gluten-Free). The AI engine matches ingredients to thousands of recipes, prioritizing items closest to expiration to minimize food waste.</p>
+                <h3>Group Voting & Polls</h3>
+                <p>No more endless back-and-forth messaging. Create quick plan polls where your squad can upvote their favorite places and settle on a time in seconds.</p>
             </div>
             <div class="step-visual">
                 <div class="visual-box">
-                    <div style="font-size: 2.5rem; margin-bottom: 10px;">🤖</div>
-                    <h4 style="margin-bottom:8px;">Custom Meal Matching</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-sub);">Generates creative dishes tailored to your exact taste and available pantry items.</p>
+                    <div style="font-size: 2.5rem; margin-bottom: 10px;">📊</div>
+                    <h4 style="margin-bottom:8px;">Instant Decision Making</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-sub);">Fair voting system to quickly agree on where to meet up.</p>
                 </div>
             </div>
         </div>
@@ -397,14 +395,14 @@
         <div class="step-row">
             <div class="step-info">
                 <span class="step-num">STEP 03</span>
-                <h3>Hands-Free Cooking Assistant</h3>
-                <p>Follow clear, step-by-step cooking instructions with integrated timers, portion scaling, and voice commands so you don't have to touch your screen with dirty hands while cooking.</p>
+                <h3>Shared Itinerary & Map</h3>
+                <p>Keep everyone on the same page with a unified timeline, integrated map routes, and automated reminders so nobody gets left behind.</p>
             </div>
             <div class="step-visual">
                 <div class="visual-box">
-                    <div style="font-size: 2.5rem; margin-bottom: 10px;">👨‍🍳</div>
-                    <h4 style="margin-bottom:8px;">Guided Voice Mode</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-sub);">Hands-free step navigation designed specifically for active cooking environments.</p>
+                    <div style="font-size: 2.5rem; margin-bottom: 10px;">🗺️</div>
+                    <h4 style="margin-bottom:8px;">Live Route & Timeline</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-sub);">Step-by-step route directions and RSVP tracking for every attendee.</p>
                 </div>
             </div>
         </div>
@@ -412,43 +410,43 @@
 
     <!-- Key Features Grid -->
     <section id="features" style="padding-bottom: 80px;">
-        <h2 class="section-title">✨ Key Highlights & Features</h2>
+        <h2 class="section-title">✨ Key Features</h2>
         <div class="grid-features">
             <div class="feature-card">
-                <div class="feature-icon">🧠</div>
-                <h3>Smart AI Engine</h3>
-                <p>Powered by advanced artificial intelligence to create custom meal ideas on the fly.</p>
+                <div class="feature-icon">📍</div>
+                <h3>Location Explorer</h3>
+                <p>Find trending venues and activities nearby instantly.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🌱</div>
-                <h3>Zero Waste Goal</h3>
-                <p>Tracks shelf life and suggests recipes using items before they spoil.</p>
+                <div class="feature-icon">🗳️</div>
+                <h3>Squad Polls</h3>
+                <p>Eliminate group chat arguments with fast, fair voting.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Nutritional Insights</h3>
-                <p>Provides instant breakdown of calories, macros, and allergen alerts for every dish.</p>
+                <div class="feature-icon">📅</div>
+                <h3>Itinerary Builder</h3>
+                <p>Schedule multi-stop hangouts with live directions and times.</p>
             </div>
         </div>
     </section>
 
     <!-- Tech Stack Section -->
     <section id="tech" style="text-align: center; padding: 60px 8%;">
-        <h2 class="section-title" style="margin-bottom: 15px;">🛠️ Technology Stack</h2>
-        <p style="color: var(--text-sub);">Built with modern web standards and AI integrations</p>
+        <h2 class="section-title" style="margin-bottom: 15px;">🛠️ Tech Stack</h2>
+        <p style="color: var(--text-sub);">Built for smooth mobile and web responsiveness</p>
         <div class="tech-badges">
             <span class="tech-badge">HTML5 / CSS3</span>
             <span class="tech-badge">JavaScript (ES6+)</span>
-            <span class="tech-badge">OpenAI API</span>
+            <span class="tech-badge">Maps API</span>
             <span class="tech-badge">GitHub Pages</span>
-            <span class="tech-badge">Responsive UI</span>
+            <span class="tech-badge">Responsive Design</span>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p><strong>AI FoodFind App Tour Project</strong></p>
-        <p style="margin-top: 6px;">Hosted on GitHub Pages • Submitted for Class Project Assignment</p>
+        <p><strong>Let's Go Out! - App Tour Project</strong></p>
+        <p style="margin-top: 6px;">Hosted on GitHub Pages • Submitted for Class Assignment</p>
     </footer>
 
 </body>
